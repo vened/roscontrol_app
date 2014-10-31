@@ -1,0 +1,10 @@
+<ion-view title="Категории продуктов">
+	<ion-content>
+		<div class="list">
+			<a class="item item-avatar" ng-repeat="category in categories" href="#/tab/category/{{category.id}}">
+				<img src="http://localhost:3000{{ category.photo.thumb.url }}">
+				<h2 style="margin-top: 10px">{{ category.name }}</h2>
+			</a>
+		</div>
+	</ion-content>
+</ion-view>

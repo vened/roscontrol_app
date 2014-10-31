@@ -1,0 +1,11 @@
+<ion-view title="{{product.name}} ({{ product.rate }} балла) ">
+	<ion-content has-header="true" padding="true">
+		<p>
+			<img src="http://localhost:3000{{ product.photo.thumb.url }}">
+		</p>
+		<h4>Характеристики:</h4>
+		<p ng-bind-html="product.property"></p>
+		<h4>Результаты теста:</h4>
+		<p ng-bind-html="product.test"></p>
+	</ion-content>
+</ion-view>
