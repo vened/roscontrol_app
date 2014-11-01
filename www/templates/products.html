@@ -1,10 +1,28 @@
 <ion-view title="{{category.name}}">
 	<ion-content has-header="true">
 		<div class="list">
-			<a class="item item-avatar" ng-repeat="product in products" href="#/tab/product/{{product.id}}">
+			<a class="item item-thumbnail-left" ng-repeat="product in products" href="#/tab/product/{{product.id}}">
 				<img src="http://localhost:3000{{ product.photo.thumb.url }}">
 
-				<h2 style="margin-top: 10px">{{ product.name }}</h2>
+				<div class="row">
+					<div class="col col-75">
+						<p style="white-space: normal">{{ product.name }}</p>
+					</div>
+					<div class="col col-25" style="text-align: right">
+						<button class="button button-balanced" ng-if="product.rate > 1" style="font-size: 1.8em">
+							{{ product.rate }}
+						</button>
+						<button class="button button-assertive" ng-if="product.rate == '!'" style="font-size: 1.8em">
+							<i data-tags="help, question" data-pack="ios7" class="ion-ios7-information"></i>
+						</button>
+						<button class="button button-dark" ng-if="product.rate == 'Чёрный список'" style="font-size: 1.8em">
+							<i data-tags="hide, remove, minimize, -" data-pack="ios7" class="ion-ios7-minus"></i>
+						</button>
+						<button class="button" ng-if="product.rate == '?'" style="font-size: 1.8em">
+							<i data-tags="question, information, ?" data-pack="ios7" class="ion-ios7-help"></i>
+						</button>
+					</div>
+				</div>
 			</a>
 		</div>
 	</ion-content>

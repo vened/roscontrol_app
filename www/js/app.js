@@ -54,11 +54,11 @@ angular.module('starter', [
 
 			// Each tab has its own nav history stack:
 
-			.state('tab.friends', {
-				url  : '/friends',
+			.state('tab.categories', {
+				url  : '/categories',
 				views: {
-					'tab-friends': {
-						templateUrl: 'templates/tab-friends.html',
+					'tab-products': {
+						templateUrl: 'templates/categories.html',
 						controller : 'CategoriesCtrl'
 					}
 				}
@@ -66,7 +66,7 @@ angular.module('starter', [
 			.state('tab.friend-detail', {
 				url  : '/category/:categoryId',
 				views: {
-					'tab-friends': {
+					'tab-products': {
 						templateUrl: 'templates/category.html',
 						controller : 'CategoryDetailCtrl'
 					}
@@ -76,7 +76,7 @@ angular.module('starter', [
 			.state('tab.products', {
 				url  : '/category/products/:categoryId',
 				views: {
-					'tab-friends': {
+					'tab-products': {
 						templateUrl: 'templates/products.html',
 						controller : 'CategoryProductsCtrl'
 					}
@@ -86,25 +86,25 @@ angular.module('starter', [
 			.state('tab.product', {
 				url  : '/product/:productId',
 				views: {
-					'tab-friends': {
+					'tab-products': {
 						templateUrl: 'templates/product.html',
 						controller : 'ProductCtrl'
 					}
 				}
 			})
 
-			.state('tab.account', {
-				url  : '/account',
+			.state('tab.about', {
+				url  : '/about',
 				views: {
-					'tab-account': {
-						templateUrl: 'templates/tab-account.html',
-						controller : 'AccountCtrl'
+					'tab-about': {
+						templateUrl: 'templates/tab-about.html',
+						controller : 'AboutCtrl'
 					}
 				}
 			});
 
 		// if none of the above states are matched, use this as the fallback
-		$urlRouterProvider.otherwise('/tab/friends');
+		$urlRouterProvider.otherwise('/tab/categories');
 
 	});
 

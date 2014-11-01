@@ -41,6 +41,6 @@ angular.module('starter.controllers', [])
 		})
 	})
 
-	.controller('AccountCtrl', function ($scope)
+	.controller('AboutCtrl', function ($scope)
 	{
 	});
