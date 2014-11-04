@@ -10,19 +10,19 @@
 		return {
 			all: function ()
 			{
-				return $http.get("http://localhost:3000/")
+				return $http.get("http://roscontrol.rocket-web.ru/")
 			},
 			get: function (categoryId)
 			{
-				return $http.get("http://localhost:3000/category/" + categoryId)
+				return $http.get("http://roscontrol.rocket-web.ru/category/" + categoryId)
 			},
 			getProducts: function (categoryId)
 			{
-				return $http.get("http://localhost:3000/category/products/" + categoryId)
+				return $http.get("http://roscontrol.rocket-web.ru/category/products/" + categoryId)
 			},
 			getProduct: function (productId)
 			{
-				return $http.get("http://localhost:3000/product/" + productId)
+				return $http.get("http://roscontrol.rocket-web.ru/product/" + productId)
 			}
 		}
 	}

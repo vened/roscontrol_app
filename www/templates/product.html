@@ -1,11 +1,31 @@
-<ion-view title="{{product.name}} ({{ product.rate }} балла) ">
+<ion-view title="{{product.name}}">
 	<ion-content has-header="true" padding="true">
+		<h3>{{product.name}}</h3>
+		<div class="row" style="margin-left: -10px;margin-right: -10px">
+			<div class="col col-75">
+				<h4 style="margin-top: 0px">Баллы по результатам тестов:</h4>
+			</div>
+			<div class="col col-25" style="text-align: right">
+				<button class="button button-balanced" ng-if="product.rate > 1" style="font-size: 1.8em">
+					{{ product.rate }}
+				</button>
+				<button class="button button-assertive" ng-if="product.rate == '!'" style="font-size: 1.8em">
+					<i data-tags="help, question" data-pack="ios7" class="ion-ios7-information"></i>
+				</button>
+				<button class="button button-dark" ng-if="product.rate == 'Чёрный список'" style="font-size: 1.8em">
+					<i data-tags="hide, remove, minimize, -" data-pack="ios7" class="ion-ios7-minus"></i>
+				</button>
+				<button class="button" ng-if="product.rate == '?'" style="font-size: 1.8em">
+					<i data-tags="question, information, ?" data-pack="ios7" class="ion-ios7-help"></i>
+				</button>
+			</div>
+		</div>
+		<h4>Результаты теста:</h4>
+		<p ng-bind-html="product.test"></p>
 		<p>
 			<img src="http://localhost:3000{{ product.photo.thumb.url }}">
 		</p>
 		<h4>Характеристики:</h4>
 		<p ng-bind-html="product.property"></p>
-		<h4>Результаты теста:</h4>
-		<p ng-bind-html="product.test"></p>
 	</ion-content>
 </ion-view>
