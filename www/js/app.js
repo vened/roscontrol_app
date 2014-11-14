@@ -26,6 +26,38 @@ angular.module('starter', [
 				// org.apache.cordova.statusbar required
 				StatusBar.styleDefault();
 			}
+			if (window.plugins && window.plugins.AdMob)
+			{
+				var admob_key = device.platform == "Android" ? "ca-app-pub-3953382062669761/1317516739" : "ca-app-pub-3953382062669761/1317516739";
+				var admob = window.plugins.AdMob;
+				
+				
+				admob.createBannerView(
+					{
+						'publisherId': admob_key,
+						'adSize'     : 'MEDIUM_RECTANGLE',
+						'bannerAtTop': true
+					},
+					function ()
+					{
+						admob.requestAd(
+							{ 'isTesting': true },
+							function ()
+							{
+								admob.showAd(true);
+							},
+							function ()
+							{
+								console.log('failed to request ad');
+							}
+						);
+					},
+					function ()
+					{
+						console.log('failed to create banner view');
+					}
+				);
+			}
 		});
 	})
 

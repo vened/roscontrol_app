@@ -19,7 +19,8 @@ angular.module('starter.controllers', [])
 
 	.controller('CategoryDetailCtrl', function ($scope, $stateParams, Categories)
 	{
-		Categories.get($stateParams.categoryId).success(function(data){
+		Categories.get($stateParams.categoryId).success(function (data)
+		{
 			$scope.category = data.category;
 			$scope.categories = data.categories;
 		})
@@ -27,7 +28,8 @@ angular.module('starter.controllers', [])
 
 	.controller('CategoryProductsCtrl', function ($scope, $stateParams, Categories)
 	{
-		Categories.getProducts($stateParams.categoryId).success(function(data){
+		Categories.getProducts($stateParams.categoryId).success(function (data)
+		{
 			$scope.category = data.category;
 			$scope.products = data.products;
 		})
@@ -43,4 +45,11 @@ angular.module('starter.controllers', [])
 
 	.controller('AboutCtrl', function ($scope)
 	{
-	});
+	})
+
+//	.controller('AdMobCtrl', function ($scope, $cordovaAdMob)
+//	{
+//		// AdMob implementation here
+//		// coming soon...
+//	});
+
